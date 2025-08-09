@@ -128,7 +128,7 @@ class CleanupAction {
     ])
 
     // Configuration overview
-    const configPairs: Array<[string, string]> = []
+    const configPairs: [string, string][] = []
     configPairs.push(['owner', `${this.config.owner}`])
     configPairs.push(['repository', `${this.config.repository}`])
     configPairs.push(['packages', `${targetPackages.join(', ')}`])
@@ -179,7 +179,7 @@ class CleanupAction {
     // Build an HTML table so it renders correctly inside <details>
     const buildHtmlTable = (
       headers: string[],
-      rows: Array<string[]>
+      rows: string[][]
     ): string => {
       const thead = `<tr>${headers.map(h => `<th>${h}</th>`).join('')}</tr>`
       const tbody = rows
