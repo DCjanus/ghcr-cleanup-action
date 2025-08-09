@@ -177,10 +177,7 @@ class CleanupAction {
     configPairs.push(['log-level', `${this.config.logLevel}`])
 
     // Build an HTML table so it renders correctly inside <details>
-    const buildHtmlTable = (
-      headers: string[],
-      rows: string[][]
-    ): string => {
+    const buildHtmlTable = (headers: string[], rows: string[][]): string => {
       const thead = `<tr>${headers.map(h => `<th>${h}</th>`).join('')}</tr>`
       const tbody = rows
         .map(r => `<tr>${r.map(c => `<td>${c}</td>`).join('')}</tr>`)
