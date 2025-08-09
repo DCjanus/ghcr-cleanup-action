@@ -44571,13 +44571,22 @@ class CleanupAction {
             configPairs.push(['delete-untagged', `${this.config.deleteUntagged}`]);
         }
         if (this.config.deleteGhostImages !== undefined) {
-            configPairs.push(['delete-ghost-images', `${this.config.deleteGhostImages}`]);
+            configPairs.push([
+                'delete-ghost-images',
+                `${this.config.deleteGhostImages}`
+            ]);
         }
         if (this.config.deletePartialImages !== undefined) {
-            configPairs.push(['delete-partial-images', `${this.config.deletePartialImages}`]);
+            configPairs.push([
+                'delete-partial-images',
+                `${this.config.deletePartialImages}`
+            ]);
         }
         if (this.config.deleteOrphanedImages !== undefined) {
-            configPairs.push(['delete-orphaned-images', `${this.config.deleteOrphanedImages}`]);
+            configPairs.push([
+                'delete-orphaned-images',
+                `${this.config.deleteOrphanedImages}`
+            ]);
         }
         if (this.config.validate !== undefined) {
             configPairs.push(['validate', `${this.config.validate}`]);
@@ -44588,9 +44597,7 @@ class CleanupAction {
         configPairs.push(['log-level', `${this.config.logLevel}`]);
         // Build an HTML table so it renders correctly inside <details>
         const buildHtmlTable = (headers, rows) => {
-            const thead = `<tr>${headers
-                .map(h => `<th>${h}</th>`)
-                .join('')}</tr>`;
+            const thead = `<tr>${headers.map(h => `<th>${h}</th>`).join('')}</tr>`;
             const tbody = rows
                 .map(r => `<tr>${r.map(c => `<td>${c}</td>`).join('')}</tr>`)
                 .join('');
